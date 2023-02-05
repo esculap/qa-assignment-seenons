@@ -30,4 +30,4 @@ The project structure is organized as follows:
 
 - pages - contains the page object files that define the UI elements and interactions for each page.
 - tests - contains the test files.
-- utility - contains useful tools (e.g. generator of data for test users)
+- utils - contains useful tools (e.g. generator of data for test users)
