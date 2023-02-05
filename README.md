@@ -34,4 +34,4 @@ The project structure is organized as follows:
 
 ## TO DO
 
-Add step with email service to check full register flow.
+Add step with test email service to check full register flow. https://mailsac.com/ could be used here or test gmail account.
