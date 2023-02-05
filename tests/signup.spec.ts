@@ -1,7 +1,7 @@
 // signup.spec.ts
 import { test } from '@playwright/test'
 import { SignUpPage } from '../pages/signup-page'
-import * as CONSTS from '../utilities/user-generator'
+import * as CONSTS from '../utils/user-generator'
 
 test('SignUp flow happy pass', async ({ page }) => {
   const signUpPage = new SignUpPage(page)
