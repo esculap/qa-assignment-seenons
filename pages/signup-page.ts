@@ -1,6 +1,5 @@
 // signup-page.ts
 import { expect, Locator, Page } from "@playwright/test";
-import { EMAIL } from "../utility/user-generator";
 
 export class SignUpPage {
   readonly page: Page;
@@ -27,7 +26,7 @@ export class SignUpPage {
     this.lastNameField = page.getByPlaceholder("Enter your last name");
   }
 
-  async goto() {
+  async gotoSignup() {
     await this.page.goto("https://demo.seenons.com/");
     await this.page.getByRole("link", { name: "Sign-up here!" }).click();
   }
@@ -47,14 +46,14 @@ export class SignUpPage {
     await this.confirmPasswordField.fill(password);
   }
 
-  async fillFirstName(first_name: string) {
+  async fillFirstName(firstName: string) {
     await this.firstNameField.click();
-    await this.firstNameField.fill(first_name);
+    await this.firstNameField.fill(firstName);
   }
 
-  async fillLastName(last_name: string) {
+  async fillLastName(lastName: string) {
     await this.lastNameField.click();
-    await this.lastNameField.fill(last_name);
+    await this.lastNameField.fill(lastName);
   }
 
   async clickConfirmCheckbox() {
@@ -74,19 +73,19 @@ export class SignUpPage {
     await this.registerButton.click();
   }
 
-  async ifEmailPage() {
+  async ifAtEmailStep() {
     await expect(this.page.getByText("Enter your e-mail")).toBeVisible();
   }
 
-  async ifPasswordPage() {
+  async ifAtPasswordStep() {
     await expect(this.page.getByText("Choose a password")).toBeVisible();
   }
 
-  async ifNamePage() {
+  async ifAtNameStep() {
     await expect(this.page.getByText("What's your name?")).toBeVisible();
   }
 
-  async ifConfirmationPage() {
+  async ifAtConfirmationStep() {
     await expect(
       this.page.getByText("A confirmation e-mail is on its way!")
     ).toBeVisible();
