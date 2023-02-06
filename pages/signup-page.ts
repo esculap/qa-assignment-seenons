@@ -1,5 +1,6 @@
 // signup-page.ts
 import { expect, Locator, Page } from '@playwright/test'
+import { EMAIL, PASSWORD } from '../utils/user-generator'
 
 export class SignUpPage {
   readonly page: Page
@@ -88,6 +89,18 @@ export class SignUpPage {
   async ifAtConfirmationStep() {
     await expect(
       this.page.getByText('A confirmation e-mail is on its way!')
+    ).toBeVisible()
+  }
+
+  async loginAfterRegistration() {
+    await this.page.goto('https://demo.seenons.com/')
+    await this.page.getByRole('button', { name: 'Sign in' }).click()
+    await this.page.getByPlaceholder('Enter your e-mail').fill(EMAIL)
+    await this.page.getByPlaceholder('Enter your password').click()
+    await this.page.getByPlaceholder('Enter your password').fill(PASSWORD)
+    await this.page.getByRole('button', { name: 'Sign in' }).click()
+    await expect(
+      this.page.getByRole('heading', { name: 'Please provide the information' })
     ).toBeVisible()
   }
 }
