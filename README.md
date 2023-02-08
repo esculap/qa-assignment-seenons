@@ -4,6 +4,8 @@ This repository contains a test automation framework for the [demo.seenons.com](
 
 ## Installation
 
+Make sure you have [Node.js](nodejs.org) installed in you system.
+
 Clone the repository and run the following command to install the necessary dependencies:
 
 ```
@@ -21,7 +23,7 @@ npx playwright test
 To run tests in browser visible mode with ability to do each step manually please use the next command:
 
 ```
-npx playwright test --headed --debug --project=chromium
+npx playwright test --debug
 ```
 
 ## Project Structure
@@ -31,7 +33,3 @@ The project structure is organized as follows:
 - pages - contains the page object files that define the UI elements and interactions for each page.
 - tests - contains the test files.
 - utils - contains useful tools (e.g. generator of data for test users)
-
-## TO DO
-
-Add step with test email service to check full register flow. https://mailsac.com/ could be used here or test gmail account.
