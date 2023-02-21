@@ -1,6 +1,6 @@
 # Test Automation Framework
 
-This repository contains a test automation framework for the demo website, built using Playwright and TypeScript.
+This repository contains a test automation framework for a demo website, built using Playwright and TypeScript.
 
 ## Installation
 
